@@ -7,7 +7,7 @@ const data_msg = document.querySelector('#data')
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault() //to prevent refreshing of the web page
     const location = search.value
-    const url = 'http://localhost:3000/weather?address=' + location
+    const url = '/weather?address=' + location
     fetch(url).then((response) => {
         response.json().then((server_data) => {
             if (server_data.error) {

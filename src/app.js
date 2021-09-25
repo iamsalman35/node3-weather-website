@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
+const port = process.env.PORT || 3000
 const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
@@ -99,6 +100,6 @@ app.get('*', (req, res) => { // * denotes all routes except the above ones. (404
 
 
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
